@@ -1,0 +1,58 @@
+{% extends 'core/base.html'  %}
+{%  load static %}
+{%  load socialaccount  %}
+{%  block title %}Signup Page{% endblock  %}
+{%  block content %}
+
+<div class = "message">
+    {% if messages  %}
+        {% for message in messages  %}
+            {%  if message.tags == 'error' %}
+                <p class = "error">{{message}}</p>
+            {%  else %}
+                <p class = "success">{{message}}</p>
+            {%  endif %}
+        {% endfor  %}
+    {% endif  %}
+</div>
+
+<div class = "engine">
+    <form method = "POST" class = "rocket">
+        {% csrf_token  %}
+        <h1>Signup Page</h1>
+        <div>
+            <label class = "label">First Name</label>
+            <input type = "text" name = "first_name" class = "space">
+        </div>
+        <div>
+            <label class = "label">Last Name</label>
+            <input type = "text" name = "last_name" class = "space">
+        </div>
+        <div>
+            <label class = "label">Username</label>
+            <input type = "text" name = "username" class = "space">
+        </div>
+        <div>
+            <label class = "label">Email</label>
+            <input type = "email" name = "email" class = "space">
+        </div>
+        <div>
+            <label class = "label">Password</label>
+            <input type = "password" name = "password" class = "space">
+        </div>
+        <button type = "submit" class = "ship">Signup</button>
+        <div>
+            <div class = "meteor">
+                <img src = "{% static 'image/google_icon.jpg'  %}" class = "icon">
+                <a href = "{% provider_login_url 'google'  %}" class = "shower">Sign With Google</a>
+            </div>
+            <div class = "meteor">
+                <img src = "{% static 'image/github_icon.png'  %}" class = "icon">
+                <a href = "{% provider_login_url 'github'  %}" class = "shower">Sign with Github</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock  %}

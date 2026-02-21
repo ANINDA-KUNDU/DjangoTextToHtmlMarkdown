@@ -1,0 +1,52 @@
+.calender {
+    display: flex;
+    flex-wrap: wrap;
+}
+.january {
+    width: 30%;
+}
+.february {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    margin: 0px;
+    font-weight: bold;
+}
+.march {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.jimmy{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    margin: 10px;
+}
+.jimmy:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.newton{
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .calender {
+        display: bolck;
+    }
+    .january {
+        width: 100%;
+    }
+    .february{
+        font-size: 30px;
+    }
+    .march {
+        width: 100%;
+        background-color: #03033a;
+    }
+    .jimmy {
+        color: white;
+    }
+}

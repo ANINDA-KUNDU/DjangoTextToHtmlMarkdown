@@ -1,0 +1,29 @@
+{%  load static %}
+
+<header>
+    <nav>
+        <div class = "logo">
+            <a href = "{% url 'home'  %}">AnindaMarkdown</a>
+        </div>
+        <div class="burger" id = "burger" onclick="toggleMenu()">
+            ☰
+        </div>
+        <div class = "fish" id = "menu">
+            <a href = "{% url 'home'  %}">Home</a>
+            <a href = "{%  url 'signup' %}">Signup</a>
+            <a href = "{% url 'login'  %}">Login</a>
+            <a href = "{% url 'logout'  %}">Logout</a>
+            <a href = "{% url 'create_markdown'  %}">Create Markdown</a>
+            <a href = "{% url 'code'  %}">Code</a>
+        </div>
+    </nav>
+</header>
+{%  block script %}
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("show");
+            document.getElementById("burger").classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+        }   
+    </script>
+{%  endblock %}

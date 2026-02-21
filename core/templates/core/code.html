@@ -1,0 +1,27 @@
+{%  extends 'core/base.html' %}
+{%  load static %}
+{%  load markdown_extras %}
+{%  block title %}Code Page{% endblock  %}
+{%  block content %}
+
+<h1>Code Page for Markdown</h1>
+
+
+{%  for code in codes %}
+    <div class = "grapes">
+        <a href = "{% url 'mark_down' code.pk %}" class = "berry">
+            <div class = "apple">
+                <p class = "jackfruit">{{ code.user }}</p>
+                <p class = "jackfruit">{{ code.title  }}</p>
+                <p class = "jackfruit">{{ code.created_at }}</p>
+            </div>
+        </a>
+    </div>
+{%  endfor %}
+
+
+
+
+
+
+{% endblock  %}

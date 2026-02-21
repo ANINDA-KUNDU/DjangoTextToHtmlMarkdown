@@ -1,0 +1,29 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet"  href = "{% static 'css/style.css'  %}">
+    <link rel = "stylesheet" href = "{%  static 'css/pygmentize.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/header.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/footer.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/signup.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/login.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/forget_password.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/forget_password_sent.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/reset_password.css' %}">
+    <meta name = "viwport" content = "width = device-width, initial-scale = 1.0">
+    <title>{% block title  %}{% endblock  %}</title>
+</head>
+<body>
+    {% include 'core/partials/header.html'  %}
+    <main>
+        {%  block content %}
+        {%  endblock %}
+    </main>
+    {% block script %}
+    {% endblock  %}
+    {%  include 'core/partials/footer.html' %}
+</body>
+</html>

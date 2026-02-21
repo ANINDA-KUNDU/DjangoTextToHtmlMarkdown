@@ -1,0 +1,45 @@
+{%  extends 'core/base.html' %}
+{%  load static %}
+{%  load markdown_extras %}
+{%  block title %}Mark Down Page{% endblock  %}
+{%  block content %}
+
+
+
+<div class = "geast">
+    <p>{{ codes.body | markdown | safe }}</p>
+</div>
+
+
+{% endblock  %}
+
+{%  block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const codeBlock = document.querySelectorAll('pre code');
+        codeBlock.forEach((block) => {
+            if(navigator.clipboard){
+                const button = document.createElement('button');
+                button.innerText = 'Copy';
+                button.className = 'copy-btn';
+                button.addEventListener('click', () => {
+                    const code = block.textContent;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'copied!';
+                        setTimeout(() => {
+                            button.innerText = 'Copy';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to Copy text:', err);
+                    });
+                });
+                const wrapper = document.createElement('div');
+                wrapper.style.position = 'relative';
+                block.parentNode.insertBefore(wrapper, block);
+                wrapper.appendChild(block);
+                wrapper.appendChild(button);
+            }
+        });
+    });
+</script>
+{%  endblock %}

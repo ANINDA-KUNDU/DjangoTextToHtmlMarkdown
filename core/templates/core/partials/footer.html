@@ -1,0 +1,21 @@
+{%  load static %}
+
+<footer>
+    <div class = "calender">
+        <div class = "january">
+            <a href = "{% url 'home' %}" class = "february">AnindaMarkdown</a>
+            <p>
+                This is Aninda's Django Markdown project. This Web-app is a part of self - project. This markdown project is based on `Django-Text-To-Html` i.e `Django-Markdown`.
+            </p>
+        </div>
+        <div class = "march">
+            <a href = "{% url 'home'  %}" class = "jimmy">Home</a>
+            <a href = "{%  url 'signup' %}" class = "jimmy">Signup</a>
+            <a href = "{%  url 'login' %}" class = "jimmy">Login</a>
+            <a href = "{%  url 'logout' %}" class = "jimmy">Logout</a>
+            <a href = "{% url 'create_markdown' %}" class = "jimmy">Create Markdown</a>
+            <a href = "{%  url 'code' %}" class = "jimmy">Code</a>
+        </div>
+    </div>
+    <p class = "newton">&copy; All Rights are Reserved by <strong>ANINDA KUNDU</strong> {% now 'Y' %}</p>
+</footer>

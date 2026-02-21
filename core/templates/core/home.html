@@ -1,0 +1,19 @@
+{%  extends 'core/base.html' %}
+{% load static %}
+{% block title  %}Home Page{% endblock  %}
+{% block content  %}
+
+<h1>This is Home Page</h1>
+
+
+<div class = "pen">
+    {% if user.is_authenticated %}
+        <p>Welcome, {{user.username}}</p>
+    {% else %}
+        <p>You are not logged in.</p>
+    {% endif  %}
+</div>
+
+
+
+{% endblock  %}

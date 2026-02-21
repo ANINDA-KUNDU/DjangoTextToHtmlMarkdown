@@ -1,0 +1,57 @@
+.chicken {
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.egg {
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 60%;
+    text-align: center;
+}
+.farm {
+    display: block;
+    font-weight: bold;
+    margin-left: 42px;
+    margin-top: 2%;
+    text-align: left;
+}
+.poultry {
+    width: 90%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 17px;
+    padding-left: 20px;
+}
+.feed {
+    width: 90%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 2%;
+    background-color: white;
+    font-size: 17px;
+}
+.feed:hover {
+    background-color: orange;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+}
+@media (max-width: 768px) {
+    .chicken {
+        height: 85vh;
+    }
+    .egg {
+        width: 100%;
+        border: none;
+    }
+    .feed {
+        width: 95%;
+        margin-top: 6%;
+    }
+}

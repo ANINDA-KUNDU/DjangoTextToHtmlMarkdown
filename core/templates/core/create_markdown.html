@@ -1,0 +1,21 @@
+{% extends 'core/base.html'  %}
+{% load static  %}
+{% block title  %}create Markdown{% endblock  %}
+{% block content  %}
+
+
+
+<form method = "POST" class = "mark">
+    {% csrf_token  %}
+    <h1>Create Markdown</h1>
+    <div>
+        <input type = "text" name = "title" class = "title" placeholder = "Title" required>
+    </div>
+    <div>
+        <textarea class = "body" rows = "5" cols = "15" name = "body" placeholder = "Type your content here ..."></textarea>
+    </div>
+    <button type = "submit" class = "mobile">Create Markdown</button>
+</form>
+
+
+{% endblock  %}

@@ -1,0 +1,89 @@
+header {
+    position: relative;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo a {
+    color: #236823;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 50px;
+    font-family: 'Times New Roman';
+}
+
+/* Menu */
+.fish {
+    margin-left: auto;
+    display: flex;
+    gap: 30px;
+}
+
+.fish a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Burger hidden on desktop */
+.burger {
+    display: none;
+    font-size: 26px;
+    color: black;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px)
+{
+    .logo a{
+        font-size: 20px;
+    }
+    .burger {
+        display: block;
+        font-size: 0;
+    }
+    .burger::before{
+        content: "\2630";
+        font-size: 26px;
+    }
+    .burger.active::before{
+        content: "X";
+        font-size: 26px;
+    }
+    .fish {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        background: #333;
+        width: 100%;
+        max-height: 100vh;
+        padding: 20px;
+        overflow: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .fish .show{
+        right: 0;
+    }
+    body.menu-open {
+        overflow: hidden;
+    }
+    .fish a {
+        color: white;
+        padding: 10px;
+        margin: 15px;
+        border-bottom: 1px solid #444;
+    }
+    .fish.show {
+        display: flex;
+    }
+}
