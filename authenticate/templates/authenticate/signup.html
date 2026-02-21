@@ -43,13 +43,17 @@
         <button type = "submit" class = "ship">Signup</button>
         <div>
             <div class = "meteor">
-                <img src = "{% static 'image/google_icon.jpg'  %}" class = "icon">
-                <a href = "{% provider_login_url 'google'  %}" class = "shower">Sign With Google</a>
+                {% if google_app  %}
+                    <img src = "{% static 'image/google_icon.jpg'  %}" class = "icon">
+                    <a href = "{% provider_login_url 'google'  %}" class = "shower">Sign With Google</a>
+                {%  endif %}
             </div>
+            {%  if github_app %}
             <div class = "meteor">
                 <img src = "{% static 'image/github_icon.png'  %}" class = "icon">
                 <a href = "{% provider_login_url 'github'  %}" class = "shower">Sign with Github</a>
             </div>
+            {%  endif %}
         </div>
     </form>
 </div>
